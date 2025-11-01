@@ -1,269 +1,61 @@
 <!doctype html>
 <html lang="pt-BR">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Música & Ritmo — Trabalho de Artes</title>
-  <meta name="description" content="Trabalho de Artes: Música e Ritmo — Kaio, Eyshela, Ryan e Dayra" />
-  <style>
-    :root{
-      --bg1:#09060a;
-      --bg2:#2b0b3a;
-      --accent:#8b5cf6; /* roxo neon */
-      --muted:#c7b9ff;
-      --card:#0f0b12;
-      --glass: rgba(255,255,255,0.04);
-      --radius:16px;
-      --maxw:1100px;
-      --gap:18px;
-      font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
-      color-scheme: dark;
-    }
-    *{box-sizing:border-box}
-    body{
-      margin:0;
-      background: linear-gradient(180deg,var(--bg1), var(--bg2));
-      color: #fff;
-      -webkit-font-smoothing:antialiased;
-      -moz-osx-font-smoothing:grayscale;
-      line-height:1.5;
-    }
-    .wrap{max-width:var(--maxw);margin:0 auto;padding:28px}
-
-    header{display:flex;align-items:center;justify-content:space-between;gap:12px}
-    .brand{display:flex;align-items:center;gap:12px}
-    .logo{width:52px;height:52px;border-radius:12px;background:linear-gradient(135deg,var(--accent),#4f46e5);display:flex;align-items:center;justify-content:center;font-weight:700}
-    nav a{color:var(--muted);text-decoration:none;margin-left:14px;font-weight:600}
-    nav a:hover{color:#fff}
-
-    .hero{display:grid;grid-template-columns:1fr;gap:22px;padding:36px 0;align-items:center}
-    .hero-inner{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));padding:28px;border-radius:20px;box-shadow:0 6px 30px rgba(0,0,0,0.6)}
-    h1{font-size:38px;margin:0;color:var(--accent);letter-spacing:-0.5px}
-    p.lead{color:var(--muted);margin-top:12px;max-width:65ch}
-
-    .controls{display:flex;gap:10px;align-items:center;margin-top:14px}
-    .btn{background:var(--accent);border:none;padding:10px 16px;border-radius:999px;color:#fff;font-weight:700;cursor:pointer}
-    .btn.ghost{background:transparent;border:1px solid rgba(255,255,255,0.06)}
-
-    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:var(--gap);margin-top:26px}
-    .card{background:var(--card);padding:18px;border-radius:16px;border:1px solid rgba(255,255,255,0.03)}
-    .card h3{margin:0 0 8px 0;color:var(--accent)}
-    .card p{margin:0;color:var(--muted)}
-
-    /* media & image styling */\    
-    .media{width:100%;border-radius:14px;overflow:hidden}
-    .media img, .media video{display:block;width:100%;height:100%;object-fit:cover}
-
-    section{padding:40px 0;border-bottom:1px solid rgba(255,255,255,0.03)}
-    h2.section-title{font-size:28px;margin:0 0 12px 0;color:var(--accent)}
-    .two-col{display:grid;grid-template-columns:1fr;gap:18px}
-
-    .styles-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:14px}
-
-    footer{padding:26px 0;color:var(--muted);display:flex;flex-direction:column;gap:10px}
-
-    /* audio toggle */
-    .audio-box{display:flex;align-items:center;gap:12px;background:var(--glass);padding:10px;border-radius:12px;border:1px solid rgba(255,255,255,0.03)}
-
-    /* responsiveness */
-    @media(min-width:900px){
-      .hero{grid-template-columns:1fr 420px}
-      .two-col{grid-template-columns:1fr 420px}
-    }
-
-    /* subtle animations */
-    .fade-up{transform:translateY(12px);opacity:0;animation:fadeUp .7s ease forwards}
-    .stagger-1{animation-delay:.05s}
-    .stagger-2{animation-delay:.12s}
-    .stagger-3{animation-delay:.18s}
-    @keyframes fadeUp{to{transform:none;opacity:1}}
-
-    /* small helpers */
-    .muted{color:var(--muted);font-size:14px}
-    .small{font-size:13px}
-  </style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Música & Ritmo — Trabalho de Artes</title>
+<style>
+body{margin:0;font-family:Arial,sans-serif;background:linear-gradient(180deg,#09060a,#2b0b3a);color:white;}
+header,footer{padding:20px;text-align:center;background:rgba(0,0,0,0.2);}
+main{max-width:900px;margin:0 auto;padding:20px;}
+h1,h2,h3{color:#8b5cf6;}
+section{margin-bottom:40px;}
+button{padding:10px 20px;margin:5px;border:none;border-radius:20px;background:#8b5cf6;color:white;font-weight:bold;cursor:pointer;}
+button.ghost{background:transparent;border:1px solid rgba(255,255,255,0.3);}
+audio{display:none;}
+</style>
 </head>
 <body>
-  <div class="wrap">
-    <header>
-      <div class="brand">
-        <div class="logo">MR</div>
-        <div>
-          <div style="font-weight:700">Música & Ritmo</div>
-          <div class="muted small">Trabalho de Artes • Turma</div>
-        </div>
-      </div>
-      <nav>
-        <a href="#sobre">Sobre</a>
-        <a href="#importancia">Importância</a>
-        <a href="#estilos">Estilos</a>
-        <a href="#contato">Contato</a>
-      </nav>
-    </header>
-
-    <main>
-      <section class="hero">
-        <div class="hero-inner fade-up">
-          <h1>O poder do ritmo: corpo, som e movimento</h1>
-          <p class="lead">Um estudo visual sobre como o ritmo e a música comunicam emoções, movem o corpo e constroem cultura. Projeto apresentado pelos integrantes: Kaio, Eyshela, Ryan e Dayra.</p>
-
-          <div class="controls">
-            <button class="btn" id="playDemo">▶ Tocar música</button>
-            <button class="btn ghost" id="muteBtn">Desativar som</button>
-            <a class="btn ghost" href="#estilos">Ver estilos</a>
-          </div>
-
-          <div class="grid" style="margin-top:20px">
-            <div class="card">
-              <h3>Comunicação não verbal</h3>
-              <p>Imagens, vídeo e som trabalham juntos para transmitir a ideia sem texto — observe clareza, emoção e coerência.</p>
-            </div>
-            <div class="card">
-              <h3>Organização</h3>
-              <p>Seções separadas e navegação simples ajudam o visitante a entender o conteúdo rapidamente.</p>
-            </div>
-            <div class="card">
-              <h3>Design equilibrado</h3>
-              <p>Cores, espaçamento e tipografia foram pensados para criar um visual harmônico e moderno.</p>
-            </div>
-          </div>
-        </div>
-
-        <aside>
-          <div class="media card fade-up stagger-2">
-            <img src="https://images.unsplash.com/photo-1511379938547-c1f69419868d?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.0.3&s=abc" alt="banda tocando" />
-          </div>
-
-          <div style="height:14px"></div>
-
-          <div class="card audio-box">
-            <div style="flex:1">
-              <strong>Audio de fundo</strong>
-              <div class="muted small">Instrumental leve — ative para ouvir.</div>
-            </div>
-            <audio id="bgAudio" preload="none">
-              <source src="https://cdn.pixabay.com/audio/2023/02/23/audio_cad44f7c9a.mp3" type="audio/mpeg">
-              Seu navegador não suporta o elemento de áudio.
-            </audio>
-          </div>
-        </aside>
-      </section>
-
-      <section id="sobre">
-        <h2 class="section-title">O que é Ritmo?</h2>
-        <div class="two-col">
-          <div>
-            <p>Ritmo é a forma como o tempo é organizado na música — ele cria movimento e expectativa. No contexto das artes, o ritmo aparece não só no som, mas também nas sequências visuais, nas coreografias e nas repetições que dão unidade a uma obra.</p>
-            <p class="muted small">Critérios: clareza na comunicação não verbal; economia de conteúdo; harmonia visual.</p>
-          </div>
-          <div class="media card">
-            <video src="https://vod-progressive.akamaized.net/exp=169.../pexels-video-856134.mp4" muted loop playsinline></video>
-          </div>
-        </div>
-      </section>
-
-      <section id="importancia">
-        <h2 class="section-title">Por que a música importa?</h2>
-        <div class="grid">
-          <div class="card">
-            <h3>Expressão</h3>
-            <p>A música permite comunicar sentimentos sem depender exclusivamente de palavras.</p>
-          </div>
-          <div class="card">
-            <h3>Movimento</h3>
-            <p>Ritmos diferentes incentivam movimentos distintos — útil em educação física, dança e performance.</p>
-          </div>
-          <div class="card">
-            <h3>Memória</h3>
-            <p>Repetição rítmica facilita a memorização e a aprendizagem.</p>
-          </div>
-        </div>
-      </section>
-
-      <section id="estilos">
-        <h2 class="section-title">Estilos Musicais — exemplos de ritmos</h2>
-        <div class="styles-grid">
-          <div class="card">
-            <h3>Samba</h3>
-            <p class="muted small">Ritmo brasileiro com levada de 2/4 e forte groove.</p>
-          </div>
-          <div class="card">
-            <h3>Hip Hop</h3>
-            <p class="muted small">Batidas sincopadas, ênfase nas caixas e no groove.</p>
-          </div>
-          <div class="card">
-            <h3>Rock</h3>
-            <p class="muted small">Compasso mais direto, ênfase no backbeat.</p>
-          </div>
-          <div class="card">
-            <h3>Forró</h3>
-            <p class="muted small">Ritmo dançante do Nordeste brasileiro, ótimo para expressão corporal.</p>
-          </div>
-          <div class="card">
-            <h3>Jazz</h3>
-            <p class="muted small">Swing e improvisação: flexibilidade rítmica.</p>
-          </div>
-          <div class="card">
-            <h3>Pop</h3>
-            <p class="muted small">Ritmos acessíveis e repetitivos, de fácil memorização.</p>
-          </div>
-        </div>
-      </section>
-
-      <section id="contato">
-        <h2 class="section-title">Apresentação & Créditos</h2>
-        <div class="card">
-          <p class="muted">Integrantes:</p>
-          <p style="font-weight:700;margin:6px 0">Kaio • Eyshela • Ryan • Dayra</p>
-          <p class="muted small">Data: 31/10/2025 • Disciplina: Artes</p>
-          <p style="margin-top:12px">Objetivo do trabalho: Demonstrar como ritmo e música funcionam como linguagem não verbal e como se relacionam com a expressão corporal e a arte visual.</p>
-        </div>
-      </section>
-
-    </main>
-
-    <footer>
-      <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap">
-        <div class="muted small">© 2025 Música & Ritmo — Trabalho de Artes</div>
-        <div class="muted small">Feito por Kaio, Eyshela, Ryan e Dayra</div>
-      </div>
-    </footer>
-  </div>
-
-  <script>
-    // Simple audio controls and accessibility
-    const bgAudio = document.getElementById('bgAudio');
-    const playBtn = document.getElementById('playDemo');
-    const muteBtn = document.getElementById('muteBtn');
-
-    playBtn.addEventListener('click', () => {
-      if (bgAudio.paused) {
-        bgAudio.play().catch(()=>{alert('O navegador bloqueou a reprodução automática. Clique no botão novamente para permitir o áudio.')});
-        playBtn.textContent = '⏸ Parar música';
-      } else {
-        bgAudio.pause();
-        playBtn.textContent = '▶ Tocar música';
-      }
-    });
-
-    muteBtn.addEventListener('click', () => {
-      bgAudio.muted = !bgAudio.muted;
-      muteBtn.textContent = bgAudio.muted ? 'Som desativado' : 'Som ativado';
-    });
-
-    // Small enhancement: lazy-load video when section is visible
-    const video = document.querySelector('video');
-    const io = new IntersectionObserver(entries => {
-      entries.forEach(e => {
-        if (e.isIntersecting) {
-          if (!video.src || video.src.length<10) video.src='https://player.vimeo.com/external/263244617.sd.mp4?s=8c2f...';
-          video.play().catch(()=>{});
-        } else {
-          video.pause();
-        }
-      })
-    }, {threshold:0.3});
-    if (video) io.observe(video);
-  </script>
+<header>
+<h1>Música & Ritmo</h1>
+<p>Trabalho de Artes • Integrantes: Kaio, Eyshela, Ryan e Dayra</p>
+</header>
+<main>
+<section>
+<h2>O poder do ritmo</h2>
+<p>A música é uma linguagem universal que conecta pessoas através do ritmo, da melodia e da harmonia.</p>
+<div>
+<button id="playBtn">▶︎ Tocar música</button>
+<button id="muteBtn">Som ativado</button>
+</div>
+<audio id="bgAudio" loop>
+<source src="https://cdn.pixabay.com/audio/2023/03/14/audio_5b4d5b9d33.mp3" type="audio/mpeg">
+Seu navegador não suporta o elemento de áudio.
+</audio>
+</section>
+<section>
+<h2>Estilos Musicais</h2>
+<div>
+<h3>Samba</h3><p>Ritmo brasileiro cheio de energia.</p>
+<h3>Hip Hop</h3><p>Batidas urbanas e marcantes.</p>
+<h3>Rock</h3><p>Compasso acelerado e emocionante.</p>
+</div>
+</section>
+<section>
+<h2>Créditos</h2>
+<p>Integrantes: Kaio, Eyshela, Ryan e Dayra</p>
+<p>Disciplina: Artes • Data: 31/10/2025</p>
+</section>
+</main>
+<footer>
+<p>© 2025 Música & Ritmo — Trabalho de Artes</p>
+</footer>
+<script>
+const bgAudio = document.getElementById('bgAudio');
+const playBtn = document.getElementById('playBtn');
+const muteBtn = document.getElementById('muteBtn');
+playBtn.addEventListener('click',()=>{if(bgAudio.paused){bgAudio.play().catch(()=>{alert('Clique novamente para ativar o som.')});playBtn.textContent='⏸ Parar música';}else{bgAudio.pause();playBtn.textContent='▶︎ Tocar música';}});
+muteBtn.addEventListener('click',()=>{bgAudio.muted=!bgAudio.muted;muteBtn.textContent=bgAudio.muted?'Som desativado':'Som ativado';});
+</script>
 </body>
 </html>
